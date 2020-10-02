@@ -1,2 +1,2 @@
 # gradient_descent
-test implementation
+implement test
