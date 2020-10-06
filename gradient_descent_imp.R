@@ -1,6 +1,6 @@
 args = commandArgs(trailingOnly = TRUE)
 
-
+# column of Y, any number of predictors >= 1
 Y = read.table(args[1])
 X = read.table(args[2], header = T)
 
@@ -8,6 +8,7 @@ params = ncol(X) + 1
 theta_initial = 1
 theta = data.frame(thetas = rep(theta_initial, params))
 
+# cost function
 ComputeCost = function(X, Y, theta){
   Yhat = data.frame(rep(theta[1,], nrow(X)))
   for (i in 2:params){
@@ -18,6 +19,7 @@ ComputeCost = function(X, Y, theta){
   return(cost)
 }
 
+# gradient 
 ComputeGrad = function(X, Y, theta){
   Yhat = data.frame(rep(theta[1,], nrow(X)))
   for (i in 2:params){
@@ -33,6 +35,7 @@ ComputeGrad = function(X, Y, theta){
   return(grad)
 }
 
+# minimize cost wrt eps
 cost = ComputeCost(X, Y, theta)
 deltaJ = 1
 alpha = as.numeric(args[3])
@@ -52,6 +55,7 @@ for (i in 2:params){
 Ypred = rowSums(Ypred)
 
 output_name = args[5]
+# file with predicted Y vals
 write.table(Ypred, file = output_name, quote = F, col.names = F, row.names = F)
 
 
