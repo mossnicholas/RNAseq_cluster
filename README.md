@@ -1,2 +1,2 @@
-# gradient_descent
-implement test
+# Experimental learning and clustering methods
+
