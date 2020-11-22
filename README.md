@@ -1,2 +1,2 @@
-# gradient_descent
-implement test
+# Classification and learning methods 
+

@@ -22,13 +22,15 @@ KMeans.cost = function(df, centroids, clusters){
   
 }
 
-
+# global k-means: 
+# df = matrix, rows as features and columns as data points
+# k = number of clusters
 GKMeans = function(df, k){
   p = nrow(df)
   n = ncol(df)
   centroid_start = rowMeans(df)
   
-  for (b in 2:4){
+  for (b in 2:k){
     costs = c()
     centroids_iter = c()
     for (a in 1:n){
