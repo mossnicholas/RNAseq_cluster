@@ -23,7 +23,7 @@ def cross_val_score_solution(clf, gene_exp, tissue_type, cv=5):
      
     scores = []
     count = 0
-    # fit training sections
+    # fit training sections 
     for i in range(len(gene_exp)):
         gene_train = gene_exp[np.arange(len(gene_exp))!=count]
         gene_train = np.concatenate(gene_train)
